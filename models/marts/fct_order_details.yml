@@ -1,0 +1,16 @@
+version: 2
+
+models:
+  - name: fct_order_details
+    columns:
+      - name: order_id
+        description: The primary key of the order
+
+      - name: employee_fk
+        description: The foreign key to the employees dimension table
+
+      - name: customer_fk
+        description: The foreign key to the customer dimension table
+
+      - name: product_fk
+        description: The foreign key to the product dimension table
