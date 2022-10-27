@@ -3,8 +3,14 @@ version: 2
 models:
   - name: fct_order_details
     columns:
+      - name: sk_order_details
+        description: The primary surrogate key of the fact_order_details.
+        tests:
+          - not_null
+          - unique
+
       - name: order_id
-        description: The primary key of the order
+        description: The number of each new order.
 
       - name: employee_fk
         description: The foreign key to the employees dimension table

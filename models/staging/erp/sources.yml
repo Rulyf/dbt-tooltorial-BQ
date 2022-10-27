@@ -1,8 +1,8 @@
 version: 2
 
 sources:
-  - name: northwind_erp
-    schema: northwind_ae05
+  - name: erp
+    schema: northwind_erp
     description: This is the northwind erp postgres database replica
     tables:
       - name: orders

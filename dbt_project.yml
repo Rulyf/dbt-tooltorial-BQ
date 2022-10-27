@@ -28,13 +28,21 @@ clean-targets:         # directories to be removed by `dbt clean`
 # Configuring models
 # Full documentation: https://docs.getdbt.com/docs/configuring-models
 
-# In this example config, we tell dbt to build all models in the example/ directory
-# as tables. These settings can be overridden in the individual model files
-# using the `{{ config(...) }}` macro.
+seeds:
+  dw_northwind:
+    +schema: northwind_erp
+
 models:
   dw_northwind:
-    # Applies to all files under models/example/
+  
     staging:
-      materialized: view
+      +materialized: view
+      +schema: stg
+      +tags: stg
+      erp:
+        +tags: stg
+        
     marts:
-      materialized: table
+      +materialized: table
+      +schema: marts
+      +tags: marts

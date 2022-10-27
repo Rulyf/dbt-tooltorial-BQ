@@ -5,7 +5,7 @@ with source_data as (
         , discount
         , unit_price
         , quantity
-    from {{ source('northwind_erp','order_details') }}
+    from {{ source('erp','order_details') }}
 )
 
 select *
